@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="jQuery/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Help">Help</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+            <i class="fa fa-bars menu-icon"></i>
+            <i class="fa-solid fa-x close-icon" style="display:none;color: #fff;"></i>
+        </div>
+        <div id="home">
+            <h1>Home</h1>
+        </div>
+        <div id="about">
+            <h1>About</h1>
+        </div>
+        <div id="Help">
+            <h1>Help</h1>
+        </div>
+        <div id="Contact">
+            <h1>Contact</h1>
+        </div>
+        <div class="arrow">
+            <i id="scrollToTop" class="fa-solid fa-arrow-up" style="color: rgb(255, 255, 255); font-size: 40px;"></i>
+        </div>
+    </div>
+
+    <!-- jQuery code -->
+    <script>
+        $(document).ready(function () {
+            $('.menu-icon').click(function () {
+                $('.content ul').slideToggle();
+                $(this).hide();
+                $('.close-icon').show();
+            });
+
+            $('.close-icon').click(function () {
+                $('.content ul').slideToggle();
+                $(this).hide();
+                $('.menu-icon').show();
+            });
+
+            $('#scrollToTop').click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#home").offset().top
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
